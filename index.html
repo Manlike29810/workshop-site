@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الاختيار الوحيد | نجارة وحدادة</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1504148455328-c376907d081c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slider-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide {
+            display: none;
+            animation: fade 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
+        .active-slide {
+            display: block;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        /* حماية الصور ومنع الحفظ بسهولة مع علامة مائية */
+        .watermark-container {
+            position: relative;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .watermark-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            font-size: 2.5rem;
+            color: rgba(255, 255, 255, 0.2);
+            font-weight: bold;
+            pointer-events: none;
+            white-space: nowrap;
+            z-index: 10;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-900" oncontextmenu="return false;">
+
+    <!-- Header / Navbar -->
+    <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl md:text-2xl font-bold text-yellow-500 flex items-center">
+                <i class="fas fa-tools ml-2"></i> الاختيار الوحيد
+            </div>
+            <div class="hidden md:flex space-x-reverse space-x-8">
+                <a href="#home" class="hover:text-yellow-500 transition">الرئيسية</a>
+                <a href="#services" class="hover:text-yellow-500 transition">خدماتنا</a>
+                <a href="#gallery" class="hover:text-yellow-500 transition">أعمالنا</a>
+                <a href="#contact" class="bg-yellow-600 px-5 py-2 rounded-lg hover:bg-yellow-500 transition font-bold">اتصل بنا</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient h-[85vh] flex items-center justify-center text-center text-white">
+        <div class="px-4 max-w-4xl">
+            <h1 class="text-4xl md:text-7xl font-bold mb-6">الاختيار الوحيد للنجارة والحدادة</h1>
+            <p class="text-xl md:text-2xl mb-10 text-gray-200 leading-relaxed">إبداع في التصميم.. دقة في التنفيذ.. جودة لا تضاهى في عالم النجارة والحدادة الفنية.</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#gallery" class="bg-yellow-600 text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-yellow-500 transition-all shadow-lg">استعرض أعمالنا الفعلية</a>
+                <a href="#contact" class="bg-transparent border-2 border-white text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-white hover:text-slate-900 transition-all">اطلب تسعيرة</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">ماذا نقدم في "الاختيار الوحيد"؟</h2>
+            <div class="h-1.5 w-24 bg-yellow-600 mx-auto rounded-full"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Woodworking -->
+            <div class="service-card bg-white p-10 rounded-3xl shadow-xl border-t-8 border-yellow-600">
+                <div class="text-yellow-600 text-5xl mb-6"><i class="fas fa-couch"></i></div>
+                <h3 class="text-2xl font-bold mb-4 text-slate-800">قسم النجارة الفاخرة</h3>
+                <p class="text-gray-600 leading-relaxed mb-6">نصمم وننفذ أحدث غرف النوم، المطابخ العصرية، والأبواب الخشبية المتينة باستخدام أجود أنواع الأخشاب الطبيعية والمعالجة.</p>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 ml-3"></i> تفصيل خزائن ومطابخ حديثة</li>
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 ml-3"></i> ديكورات خشبية للجدران والأسقف</li>
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 ml-3"></i> صيانة وترميم الأثاث</li>
+                </ul>
+            </div>
+            <!-- Metalworking -->
+            <div class="service-card bg-white p-10 rounded-3xl shadow-xl border-t-8 border-slate-700">
+                <div class="text-slate-700 text-5xl mb-6"><i class="fas fa-shield-alt"></i></div>
+                <h3 class="text-2xl font-bold mb-4 text-slate-800">قسم الحدادة المتطورة</h3>
+                <p class="text-gray-600 leading-relaxed mb-6">نتميز في تشكيل الحديد المشغول (الفيرفورجيه)، مظلات السيارات، السواتر، وأبواب الحديد المقصوص بالليزر بأعلى معايير الأمان.</p>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 ml-3"></i> أبواب ليزر وحديد مشغول</li>
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 ml-3"></i> حمايات نوافذ ودرابزين سلالم</li>
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 ml-3"></i> مظلات وسواتر بجودة عالية</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Moving Gallery Slider with Actual User Photos -->
+    <section id="gallery" class="bg-slate-900 py-24 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">نماذج من أعمالنا الفعلية</h2>
+                <p class="text-gray-400 mb-6 italic">جميع الصور الموضحة من تنفيذ ورشة الاختيار الوحيد</p>
+                <div class="h-1.5 w-24 bg-yellow-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="slider-container max-w-5xl mx-auto rounded-3xl shadow-2xl relative overflow-hidden group">
+                <div class="slide active-slide relative watermark-container">
+                    <img src="مجلس ديكور شاشة.jpg" alt="ديكور شاشة مجلس" class="w-full h-[600px] object-cover">
+                    <div class="watermark-overlay">الاختيار الوحيد</div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent flex items-end justify-center pb-12">
+                        <h4 class="text-2xl font-bold text-yellow-500">ديكور شاشات ومجالس</h4>
+                    </div>
+                </div>
+
+                <div class="slide relative watermark-container">
+                    <img src="خزنة ملابس عصرية.jpg" alt="خزنة ملابس" class="w-full h-[600px] object-cover">
+                    <div class="watermark-overlay">الاختيار الوحيد</div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent flex items-end justify-center pb-12 text-center px-4">
+                        <h4 class="text-2xl font-bold text-yellow-500">خزائن ملابس عصرية بتصاميم حديثة</h4>
+                    </div>
+                </div>
+
+                <div class="slide relative watermark-container">
+                    <img src="طاولات حديد زجاج.jpg" alt="طاولات حديد" class="w-full h-[600px] object-cover">
+                    <div class="watermark-overlay">الاختيار الوحيد</div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent flex items-end justify-center pb-12">
+                        <h4 class="text-2xl font-bold text-yellow-500">طاولات حديد وزجاج فخمة</h4>
+                    </div>
+                </div>
+
+                <div class="slide relative watermark-container">
+                    <img src="ديكور شيبورت.jpg" alt="ديكور شيبورت" class="w-full h-[600px] object-cover">
+                    <div class="watermark-overlay">الاختيار الوحيد</div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent flex items-end justify-center pb-12">
+                        <h4 class="text-2xl font-bold text-yellow-500">ديكورات شيبورت جدارية</h4>
+                    </div>
+                </div>
+
+                <div class="slide relative watermark-container">
+                    <img src="سراير خشب.jpg" alt="سراير خشب" class="w-full h-[600px] object-cover">
+                    <div class="watermark-overlay">الاختيار الوحيد</div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent flex items-end justify-center pb-12">
+                        <h4 class="text-2xl font-bold text-yellow-500">سراير خشبية مزدوجة متينة</h4>
+                    </div>
+                </div>
+
+                <!-- Slider Controls -->
+                <button onclick="changeSlide(-1)" class="absolute top-1/2 left-6 -translate-y-1/2 bg-white/20 backdrop-blur-md p-4 rounded-full hover:bg-yellow-600 transition-all opacity-0 group-hover:opacity-100 z-20">
+                    <i class="fas fa-chevron-left text-white"></i>
+                </button>
+                <button onclick="changeSlide(1)" class="absolute top-1/2 right-6 -translate-y-1/2 bg-white/20 backdrop-blur-md p-4 rounded-full hover:bg-yellow-600 transition-all opacity-0 group-hover:opacity-100 z-20">
+                    <i class="fas fa-chevron-right text-white"></i>
+                </button>
+            </div>
+            
+            <p class="text-center mt-8 text-gray-500 text-sm italic font-bold">حقوق الحفظ والتنزيل محفوظة لورشة الاختيار الوحيد &copy;</p>
+        </div>
+    </section>
+
+    <!-- Contact Section with Updated Phone Number -->
+    <section id="contact" class="py-24 container mx-auto px-6">
+        <div class="bg-white rounded-[3rem] shadow-2xl p-10 md:p-20 text-center relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-100 rounded-bl-full -mr-16 -mt-16"></div>
+            
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-slate-800">تواصل مع "الاختيار الوحيد" اليوم</h2>
+            <p class="text-gray-600 mb-12 max-w-2xl mx-auto italic font-bold">نحن بانتظاركم لنحول منازلكم إلى قطع فنية بلمساتنا الخاصة.</p>
+            
+            <div class="flex flex-wrap justify-center gap-6">
+                <!-- WhatsApp (Updated) -->
+                <a href="https://wa.me/966559957993" class="flex items-center space-x-reverse space-x-4 bg-green-50 px-6 py-5 rounded-2xl hover:bg-green-100 transition shadow-sm border border-green-200 flex-1 min-w-[280px]">
+                    <i class="fab fa-whatsapp text-4xl text-green-600"></i>
+                    <div class="text-right">
+                        <p class="text-sm text-gray-500">واتساب</p>
+                        <p class="text-lg font-bold text-slate-800">+966 55 995 7993</p>
+                    </div>
+                </a>
+                <!-- Phone (Updated) -->
+                <a href="tel:+966559957993" class="flex items-center space-x-reverse space-x-4 bg-blue-50 px-6 py-5 rounded-2xl hover:bg-blue-100 transition shadow-sm border border-blue-200 flex-1 min-w-[280px]">
+                    <i class="fas fa-phone-alt text-3xl text-blue-600"></i>
+                    <div class="text-right">
+                        <p class="text-sm text-gray-500">اتصال مباشر</p>
+                        <p class="text-lg font-bold text-slate-800">055 995 7993</p>
+                    </div>
+                </a>
+                <!-- Google Maps -->
+                <a href="https://maps.app.goo.gl/i7qqGvRT6XHDw2un7" target="_blank" class="flex items-center space-x-reverse space-x-4 bg-red-50 px-6 py-5 rounded-2xl hover:bg-red-100 transition shadow-sm border border-red-200 flex-1 min-w-[280px]">
+                    <i class="fas fa-map-marked-alt text-3xl text-red-600"></i>
+                    <div class="text-right">
+                        <p class="text-sm text-gray-500">موقعنا الفعلي</p>
+                        <p class="text-lg font-bold text-slate-800 italic">قوقل خرائط</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-gray-400 py-12 text-center border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="text-2xl font-bold text-yellow-500 mb-6 italic">الاختيار الوحيد</div>
+            <p class="mb-4 text-sm">الجودة، الإبداع، والاتقان في مكان واحد.</p>
+            <div class="flex justify-center space-x-reverse space-x-6 mb-8">
+                <a href="#" class="hover:text-yellow-500 transition-colors"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-yellow-500 transition-colors"><i class="fab fa-tiktok text-xl"></i></a>
+                <a href="#" class="hover:text-yellow-500 transition-colors"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="#" class="hover:text-yellow-500 transition-colors"><i class="fab fa-facebook text-xl"></i></a>
+            </div>
+            <p class="text-xs">&copy; 2024 الاختيار الوحيد للنجارة والحدادة. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach(s => s.classList.remove('active-slide'));
+            if (index >= slides.length) currentSlide = 0;
+            else if (index < 0) currentSlide = slides.length - 1;
+            else currentSlide = index;
+            slides[currentSlide].classList.add('active-slide');
+        }
+
+        function changeSlide(step) {
+            showSlide(currentSlide + step);
+        }
+
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('dragstart', (e) => e.preventDefault());
+        });
+    </script>
+
+</body>
+</html>
